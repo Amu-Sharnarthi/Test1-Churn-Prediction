@@ -352,7 +352,9 @@ def local_pdp_curve(model, base_raw_row, feature_name, model_feature_frame, grid
 
     for value in grid:
         temp = base_raw_row.copy()
-        temp.iloc[0, temp.columns.get_loc(feature_name)] = value
+        #temp.iloc[0, temp.columns.get_loc(feature_name)] = value
+        temp[feature_name] = temp[feature_name].astype(float)
+        temp.loc[temp.index[0], feature_name] = float(value)
         temp = create_features(temp)
         temp = align_to_model_columns(temp, MODEL_INPUT_COLS)
         preds.append(model.predict_proba(temp)[0][1])
@@ -370,7 +372,7 @@ def metric_value_fmt(metric_name, value):
 col_logo, col_title = st.columns([1.25, 5])
 with col_logo:
     try:
-        st.image("EULOGO.png", width=190)
+        st.image("EULogo.png", width=190)
     except Exception:
         st.info("EU Logo")
 
