@@ -139,9 +139,6 @@ ________________________________________
 👨‍🎓 Author
 Ambika Sharnarthi
 ________________________________________
-👨‍🏫 Guided By
-Sai Kagne
-________________________________________
 📜 License
 This project is for academic and educational purposes.
 ________________________________________
